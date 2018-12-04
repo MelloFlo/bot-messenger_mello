@@ -4,11 +4,11 @@ include Facebook::Messenger
 
 Bot.on :message do |message|
 
-     if message.text.include? "Bonjour"
-       message.reply(text: "Wesh maggl")
-   elsif message.text.include? "Bonne nuit"
-        message.reply(text: "Dors bien fdp")
-    else
+      if message.text.include? "Bonjour"
+        message.reply(text: "Salut p'tit gars")
+      elsif message.text.include? "Bye"
+        message.reply(text: "Bon vent")
+      else
         message.reply(text: 'Reponse par defaut')
-    end
+      end
 end
