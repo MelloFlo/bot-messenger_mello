@@ -1,8 +1,10 @@
 Bot.on :message do |message|
-  message.typing_on
-  if message.text.include? "bonjour"
-    message.reply(text: "hello"+message.id )
-  else
-    message.reply(text: "hello")
-  end
+
+     if message.text.include? "Bonjour"
+       message.reply(text: "Wesh maggl")
+   elsif message.text.include? "Bonne nuit"
+        message.reply(text: "Dors bien fdp")
+    else
+        message.reply(text: 'Reponse par defaut')
+    end
 end
