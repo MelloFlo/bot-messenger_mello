@@ -9,6 +9,6 @@ Bot.on :message do |message|
       elsif message.text.include? "Bye"
         message.reply(text: "Bon vent")
       else
-        message.reply(text: 'Reponse par defaut')
+        message.reply(text: 'On dis bonjour avant tout, et aurevoir à la fin')
       end
 end
