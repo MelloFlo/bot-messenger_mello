@@ -44,5 +44,4 @@ Bot.on :message do |message|
       puts "Human #{message.recipient} marked for extermination"
     end
 
-  end
-end
+  end 
