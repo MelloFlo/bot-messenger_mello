@@ -23,10 +23,10 @@ message.reply(
   ]
 )
 
-if message.payload == "HARMLESS"
+if payload == "HARMLESS"
   message.reply(text: "T'es cool!")
 end
-if message.payload == "ZERO"
+if payload == "ZERO"
   message.reply(text: "T'es pas cool!")
 end
 
