@@ -27,7 +27,7 @@ Bot.on :message do |message|
         content_type: 'text',
         title: "Non !",
         payload: 'ZERO'
-      }
+      },
     ]
   )
 reponse
