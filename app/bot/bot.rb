@@ -2,46 +2,35 @@ require 'facebook/messenger'
 
 include Facebook::Messenger
 
+
+def reponse
+  if message.text == "Ouiiiii !"
+    message.reply(text: "T'es cool!")
+  elsif
+    message.text == "Non !")
+    message.reply(text: "T'es pas cool!")
+  else
+    reponse
+  end
+end
+
 Bot.on :message do |message|
-  # message.reply(
-  #   text: "T'es prêt ?",
-  #   quick_replies: [
-  #     {
-  #       content_type: 'text',
-  #       title: "Ouiiiii !",
-  #       payload: 'HARMLESS'
-  #     },
-  #     {
-  #       content_type: 'text',
-  #       title: "Non !",
-  #       payload: 'ZERO'
-  #     }
-  #   ]
-  # )
-  #
-  # if payload == "HARMLESS"
-  #   message.reply(text: "T'es cool!")
-  # end
-  # if payload == "ZERO"
-  #   message.reply(text: "T'es pas cool!")
-  # end
   message.reply(
-    attachment: {
-      type: 'template',
-      payload: {
-        template_type: 'button',
-        text: 'Human, do you like me?',
-        buttons: [
-          { type: 'postback', title: 'Yes', payload: 'HARMLESS' },
-          { type: 'postback', title: 'No', payload: 'EXTERMINATE' }
-        ]
+    text: "T'es prêt ?",
+    quick_replies: [
+      {
+        content_type: 'text',
+        title: "Ouiiiii !",
+        payload: 'HARMLESS'
+      },
+      {
+        content_type: 'text',
+        title: "Non !",
+        payload: 'ZERO'
       }
-    }
+    ]
   )
+reponse
 
-
-    if message.payload == 'EXTERMINATE'
-      puts "Human #{message.recipient} marked for extermination"
-    end
-
-  end 
+message.reply(text: "Bye")
+end
